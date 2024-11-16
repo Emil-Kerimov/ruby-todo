@@ -92,10 +92,12 @@ class TaskManager
   end
 end
 
-def main(commands = [])
+def main
   manager = TaskManager.new
 
-  commands.each do |input|
+  loop do
+    print "\nEnter command: "
+    input = gets.chomp
     command, *args = input.split
 
     case command
@@ -115,7 +117,7 @@ def main(commands = [])
       filter_type = args[0].to_i
 
       if filter_type == 1
-        status = args[1].downcase == 'y'
+        status = args[1].downcase == 'd'
         tasks = manager.filter_tasks(status: status)
       elsif filter_type == 2
         before_date = args[1]
@@ -151,14 +153,5 @@ if __FILE__ == $0
   puts 'complete title'
   puts 'exit'
 
-  commands = []
-
-  loop do
-    print "\nEnter command: "
-    input = gets.chomp
-    commands << input
-    break if input.downcase == 'exit'
-  end
-
-  main(commands)
+  main
 end

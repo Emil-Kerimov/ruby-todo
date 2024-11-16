@@ -7,11 +7,16 @@
   {
     "title": "test",
     "deadline": "2024-10-18",
-    "completed": false
+    "completed": true
   },
   {
     "title": "test3",
     "deadline": "2024-11-12",
+    "completed": false
+  },
+  {
+    "title": "wtrehtg",
+    "deadline": "2024-12-25",
     "completed": false
   }
 ]
